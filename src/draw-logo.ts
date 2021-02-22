@@ -10,6 +10,7 @@ interface Input {
   toothColor3?: Color;
   backgroundColor?: Color;
   cornerRadius?: number;
+  size?: number;
 }
 
 export default function drawLogo({
@@ -19,11 +20,12 @@ export default function drawLogo({
   toothColor3 = Color.random(),
   backgroundColor = Color.random(),
   cornerRadius = 6,
+  size = 128,
 }: Input = {}): string {
   const result = svg(
     {
-      width: '128px',
-      height: '128px',
+      width: size + 'px',
+      height: size + 'px',
       viewBox: '0 0 128 128',
       version: '1.1',
       xmlns: 'http://www.w3.org/2000/svg',

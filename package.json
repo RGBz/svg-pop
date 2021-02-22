@@ -4,6 +4,7 @@
   "description": "RGBz logos on demand.",
   "main": "index.ts",
   "scripts": {
+    "prepare": "npm run build",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "test": "jest --silent",
     "build": "tsc",
@@ -21,6 +22,8 @@
   "homepage": "https://github.com/RGBz/logoer#readme",
   "devDependencies": {
     "@types/jest": "^26.0.20",
+    "@types/sharp": "^0.27.1",
+    "@types/yargs": "^16.0.0",
     "@typescript-eslint/eslint-plugin": "^4.15.1",
     "@typescript-eslint/parser": "^4.15.1",
     "eslint": "^7.20.0",
@@ -43,5 +46,9 @@
     "*.{js,ts,tsx}": [
       "eslint --fix"
     ]
+  },
+  "dependencies": {
+    "sharp": "^0.27.1",
+    "yargs": "^16.2.0"
   }
 }

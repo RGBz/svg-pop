@@ -1,4 +1,4 @@
-type Args = (attributes?: Record<string, string>, ...children: string[]) => string;
+type Args = (attributes?: Record<string, string | number>, ...children: string[]) => string;
 
 type XML = Record<string, Args>;
 
@@ -6,7 +6,7 @@ const xml = new Proxy<XML>(
   {},
   {
     get(_, tagName: string): Args {
-      return (attributes?: Record<string, string> | string, ...children: string[]): string => {
+      return (attributes?: Record<string, string | number> | string, ...children: string[]): string => {
         const hasAttributes = typeof attributes !== 'string';
         const _attributes = hasAttributes ? attributes : {};
         const _children = hasAttributes ? children : [attributes, ...children];

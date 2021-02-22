@@ -7,7 +7,7 @@
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "test": "jest --silent",
     "build": "tsc",
-    "start": "npm run build && node build/index.js"
+    "start": "node build/index.js"
   },
   "repository": {
     "type": "git",

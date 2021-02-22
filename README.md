@@ -1,7 +1,7 @@
 # logoer
 This makes RGBz logos. It's for me.
 
-![Logo](./sample.png)
+![Logo](./sample.png =256x256)
 
 ```bash
 npm i

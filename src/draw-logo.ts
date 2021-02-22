@@ -9,6 +9,7 @@ interface Input {
   toothColor2?: Color;
   toothColor3?: Color;
   backgroundColor?: Color;
+  cornerRadius?: number;
 }
 
 export default function drawLogo({
@@ -17,6 +18,7 @@ export default function drawLogo({
   toothColor2 = Color.random(),
   toothColor3 = Color.random(),
   backgroundColor = Color.random(),
+  cornerRadius = 6,
 }: Input = {}): string {
   const result = svg(
     {
@@ -34,7 +36,7 @@ export default function drawLogo({
         fill: 'none',
         ['fill-rule']: 'evenodd',
       },
-      rect({ fill: backgroundColor.hex, x: 0, y: 0, width: 128, height: 128, rx: 6 }),
+      rect({ fill: backgroundColor.hex, x: 0, y: 0, width: 128, height: 128, rx: cornerRadius }),
       rect({ fill: toothColor1.hex, x: 26, y: 84, width: 16, height: 16, rx: 3 }),
       rect({ fill: toothColor2.hex, x: 46, y: 84, width: 16, height: 16, rx: 3 }),
       rect({ fill: toothColor3.hex, x: 66, y: 84, width: 16, height: 16, rx: 3 }),

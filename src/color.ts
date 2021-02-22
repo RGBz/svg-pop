@@ -6,11 +6,11 @@ export default class Color {
   blue: number;
   alpha: number;
 
-  static random(): Color {
-    return new Color(randomInt(255), randomInt(255), randomInt(255));
+  static random(alpha = 1.0): Color {
+    return new Color(randomInt(255), randomInt(255), randomInt(255), alpha);
   }
 
-  constructor(red: number, green: number, blue: number, alpha = 1) {
+  constructor(red: number, green: number, blue: number, alpha = 1.0) {
     this.red = red;
     this.green = green;
     this.blue = blue;

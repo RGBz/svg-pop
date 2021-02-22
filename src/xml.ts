@@ -1,8 +1,6 @@
-type Args = (attributes?: Record<string, string | number>, ...children: string[]) => string;
+type Args = (attributes?: Record<string, string | number> | string, ...children: string[]) => string;
 
-type XML = Record<string, Args>;
-
-const xml = new Proxy<XML>(
+export default new Proxy<Record<string, Args>>(
   {},
   {
     get(_, tagName: string): Args {
@@ -24,5 +22,3 @@ const xml = new Proxy<XML>(
     },
   },
 );
-
-export default xml;

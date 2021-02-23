@@ -11,14 +11,16 @@ interface Input {
   backgroundColor?: Color;
   cornerRadius?: number;
   size?: number;
+  opacity?: number;
 }
 
 export default function drawLogo({
-  eyeColor = Color.random(),
-  toothColor1 = Color.random(),
-  toothColor2 = Color.random(),
-  toothColor3 = Color.random(),
-  backgroundColor = Color.random(),
+  opacity = 1,
+  eyeColor = Color.random(opacity),
+  toothColor1 = Color.random(opacity),
+  toothColor2 = Color.random(opacity),
+  toothColor3 = Color.random(opacity),
+  backgroundColor = Color.random(opacity),
   cornerRadius = 6,
   size = 128,
 }: Input = {}): string {

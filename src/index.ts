@@ -15,7 +15,7 @@ const { argv } = yargs(process.argv.slice(2)).options({
 
 async function main(): Promise<void> {
   const inputPath = argv._[0];
-  const outputPath = argv._[1].replace(/\.png$/, '');
+  const outputPath = argv._[1].replace(/\.svg$/, '');
   const size = argv.size;
   const svg = await fs.readFile(inputPath, 'utf-8');
   const resizedSvg = resizeSvg(svg, size, size);
@@ -26,9 +26,9 @@ async function main(): Promise<void> {
         map[color] = Color.random(argv.opacity);
         return map;
       }, {});
-      const outputPathFinal = outputPath + '_' + i + '.png';
+      const outputPathFinal = outputPath + '_' + i + '.svg';
       const colorSwappedSvg = swapPalette(resizedSvg, colorMap);
-      await svgToPng(colorSwappedSvg, outputPathFinal, size);
+      await fs.writeFile(outputPathFinal, colorSwappedSvg);
     }),
   );
 }

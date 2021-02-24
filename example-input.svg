@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="128px" height="128px" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
-    <title>logo-mono-dark@10x</title>
-    <desc>Created with Sketch.</desc>
-    <g id="logo-mono-dark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <title>example</title>
+    <g id="example" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <rect id="Rectangle" fill="#110F0F" x="0" y="0" width="128" height="128" rx="12"></rect>
         <rect id="Rectangle" fill="#8D709A" opacity="0.323496501" x="26" y="84" width="16" height="16" rx="3"></rect>
         <rect id="Rectangle" fill="#8B95AE" opacity="0.323496501" x="46" y="84" width="16" height="16" rx="3"></rect>

@@ -1,7 +1,7 @@
 {
-  "name": "rgbz-logoer",
+  "name": "svg-pop",
   "version": "1.0.0",
-  "description": "RGBz logos on demand.",
+  "description": "Generate random colorful palette swaps for an SVG.",
   "main": "index.ts",
   "scripts": {
     "prepare": "npm run build",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RGBz/logoer.git"
+    "url": "git+https://github.com/RGBz/svg-pop.git"
   },
   "author": "RGBz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RGBz/logoer/issues"
+    "url": "https://github.com/RGBz/svg-pop/issues"
   },
-  "homepage": "https://github.com/RGBz/logoer#readme",
+  "homepage": "https://github.com/RGBz/svg-pop#readme",
   "devDependencies": {
     "@types/jest": "^26.0.20",
     "@types/sharp": "^0.27.1",

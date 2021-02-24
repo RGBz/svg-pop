@@ -1,4 +1,4 @@
-# SVG Pop
+# ✨ SVG Pop ✨
 Generate colorful alternatives for an SVG.
 
 ```bash

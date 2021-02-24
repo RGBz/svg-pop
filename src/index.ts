@@ -1,9 +1,10 @@
 import fs from 'fs/promises';
+import path from 'path';
+import sharp from 'sharp';
 import yargs from 'yargs/yargs';
 import Color from './color';
 import identifyPalette from './identify-palette';
 import swapPalette from './swap-palette';
-import svgToPng from './svg-to-png';
 import resizeSvg from './resize-svg';
 
 const { argv } = yargs(process.argv.slice(2)).options({
@@ -14,8 +15,10 @@ const { argv } = yargs(process.argv.slice(2)).options({
 });
 
 async function main(): Promise<void> {
+  const outputPath = argv._[1];
+  const outputExtension = path.extname(outputPath);
+  const outputBasename = outputPath.substring(0, outputPath.length - outputExtension.length);
   const inputPath = argv._[0];
-  const outputPath = argv._[1].replace(/\.svg$/, '');
   const size = argv.size;
   const svg = await fs.readFile(inputPath, 'utf-8');
   const resizedSvg = resizeSvg(svg, size, size);
@@ -26,9 +29,13 @@ async function main(): Promise<void> {
         map[color] = Color.random(argv.opacity);
         return map;
       }, {});
-      const outputPathFinal = outputPath + '_' + i + '.svg';
+      const outputPathFinal = outputBasename + '_' + i + outputExtension;
       const colorSwappedSvg = swapPalette(resizedSvg, colorMap);
-      await fs.writeFile(outputPathFinal, colorSwappedSvg);
+      const image = sharp(Buffer.from(colorSwappedSvg, 'utf8'));
+      if (size) {
+        image.resize(size);
+      }
+      await image.toFile(outputPathFinal);
     }),
   );
 }

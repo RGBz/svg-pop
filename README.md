@@ -1,5 +1,5 @@
 # ✨ SVG Pop ✨
-Generate colorful alternatives for an SVG.
+Generate colorful, procedurally generated, palette-swapped alternatives for an SVG.
 
 ```bash
 npm i

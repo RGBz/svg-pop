@@ -1,5 +1,7 @@
 # ✨ SVG Pop ✨
-Generate colorful, procedurally generated, palette-swapped alternatives for an SVG.
+Have a logo or symbol you want to try out with different color palettes?
+
+Use SVG Pop to generate several colorful, procedurally-generated, palette-swapped alternatives for an SVG.
 
 ```bash
 npm i

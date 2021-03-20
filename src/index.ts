@@ -6,6 +6,7 @@ import Color from './color';
 import identifyPalette from './identify-palette';
 import swapPalette from './swap-palette';
 import resizeSvg from './resize-svg';
+import Palette from './palette';
 
 const { argv } = yargs(process.argv.slice(2)).options({
   _: { type: 'string' },
@@ -25,8 +26,9 @@ async function main(): Promise<void> {
   const colors = identifyPalette(svg);
   await Promise.all(
     new Array(argv.count).fill(null).map(async (_, i) => {
-      const colorMap = colors.reduce((map: { [color: string]: Color }, color) => {
-        map[color] = Color.random(argv.opacity);
+      const palette = Palette.random(colors.length);
+      const colorMap = colors.reduce((map: { [color: string]: Color }, color, i) => {
+        map[color] = palette.colors[i];
         return map;
       }, {});
       const outputPathFinal = outputBasename + '_' + i + outputExtension;
